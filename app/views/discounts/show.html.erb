@@ -1,19 +1,23 @@
-<p id="notice"><%= notice %></p>
+<!-- Page Content -->
+    <div class="container">
 
-<p>
-  <strong>Title:</strong>
-  <%= @discount.title %>
-</p>
+      <!-- Page Heading -->
+      <hr />
+      <!-- Project One -->
+      <div class="row">
+        <div class="col-md-7">
+          <a href="#">
+            <%= image_tag(@discount.avatar.url, class: "img-responsive") if @discount.avatar? %>
+          </a>
+        </div>
+        <div class="col-md-5">
+          <h3><%= @discount.title %></h3>
+          <h4>$<%= @discount.price %>.-</h4>
+          <h2>LISTO!! YA TIENES TU DESCUENTO. MUESTRA ESTA IMAGEN EN EL MESON</h2>
+          <%= link_to "Volver", discounts_path, :class => "btn btn-primary" %>
+        </div>
+      </div>
 
-<p>
-  <strong>Price:</strong>
-  <%= @discount.price %>
-</p>
-
-<p>
-  <strong>Detail:</strong>
-  <%= @discount.detail %>
-</p>
-
-<%= link_to 'Edit', edit_discount_path(@discount) %> |
-<%= link_to 'Back', discounts_path %>
+      <!-- /.row -->
+      
+    </div>

@@ -1,31 +1,25 @@
-<p id="notice"><%= notice %></p>
+<!-- Page Content -->
+    <div class="container">
 
-<h1>Listing Discounts</h1>
+      <!-- Page Heading -->
+      <% @discounts.each do |discount| %>
+      <hr />
+      <!-- Project One -->
+      <div class="row">
+        <div class="col-md-7">
+          <a href="#">
+            <%= image_tag(discount.avatar.url, class: "img-responsive") if discount.avatar? %>
+          </a>
+        </div>
+        <div class="col-md-5">
+          <h3><%= discount.title %></h3>
+          <h4>$<%= discount.price %>.-</h4>
+          <%= link_to "Obtener promoción", discount, :class => "btn btn-primary" %>
+        </div>
+      </div>
+      
+      <% end %>
+      <!-- /.row -->
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Price</th>
-      <th>Detail</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @discounts.each do |discount| %>
-      <tr>
-        <td><%= discount.title %></td>
-        <td><%= discount.price %></td>
-        <td><%= discount.detail %></td>
-        <td><%= link_to 'Show', discount %></td>
-        <td><%= link_to 'Edit', edit_discount_path(discount) %></td>
-        <td><%= link_to 'Destroy', discount, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Discount', new_discount_path %>
+      <hr>
+    </div>

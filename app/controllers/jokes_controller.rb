@@ -69,6 +69,6 @@ class JokesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def joke_params
-      params.require(:joke).permit(:like, :dislike)
+      params.require(:joke).permit(:like, :dislike, :avatar)
     end
 end
