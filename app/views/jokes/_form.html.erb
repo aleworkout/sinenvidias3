@@ -1,0 +1,25 @@
+<%= form_for(@joke) do |f| %>
+  <% if @joke.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@joke.errors.count, "error") %> prohibited this joke from being saved:</h2>
+
+      <ul>
+      <% @joke.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :like %><br>
+    <%= f.number_field :like %>
+  </div>
+  <div class="field">
+    <%= f.label :dislike %><br>
+    <%= f.number_field :dislike %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
