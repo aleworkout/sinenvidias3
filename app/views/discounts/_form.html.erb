@@ -12,18 +12,23 @@
   <% end %>
   
   <div class="field">
+    <%= f.label "Imagen de la promoción" %><br>
     <%= f.file_field :avatar, as: :file %>
   </div>
   <div class="field">
-    <%= f.label :title %><br>
+    <%= f.label "Titulo" %><br>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :price %><br>
+    <%= f.label "Precio (sin descuento)" %><br>
     <%= f.number_field :price %>
   </div>
   <div class="field">
-    <%= f.label :detail %><br>
+    <%= f.label "Precio (con descuento)" %><br>
+    <%= f.number_field :final_price %>
+  </div>
+  <div class="field">
+    <%= f.label "Detalle (Opcional)" %><br>
     <%= f.text_area :detail %>
   </div>
   <div class="actions">

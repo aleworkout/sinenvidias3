@@ -1,4 +1,6 @@
 <!-- Page Content -->
+    <h1>Descuentos</h1>
+    
     <div class="container">
 
       <!-- Page Heading -->
@@ -13,8 +15,8 @@
         </div>
         <div class="col-md-5">
           <h3><%= discount.title %></h3>
-          <h4>$<%= discount.price %>.-</h4>
-          <%= link_to "Obtener promoción", discount, :class => "btn btn-primary" %>
+          <h2>$<%= discount.price %>.-</h2>
+          <%= link_to "Aplicar descuento", discount, :class => "btn btn-warning" %>
         </div>
       </div>
       

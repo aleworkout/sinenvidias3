@@ -12,9 +12,10 @@
         </div>
         <div class="col-md-5">
           <h3><%= @discount.title %></h3>
-          <h4>$<%= @discount.price %>.-</h4>
-          <h2>LISTO!! YA TIENES TU DESCUENTO. MUESTRA ESTA IMAGEN EN EL MESON</h2>
-          <%= link_to "Volver", discounts_path, :class => "btn btn-primary" %>
+          <strike>$<%= @discount.price %>.-</strike>
+          <h2>$<%= @discount.final_price %>.-</h2>
+          <h4>LISTO!! YA TIENES TU DESCUENTO. MUESTRA ESTA IMAGEN EN EL MESON</h4>
+          <%= link_to "Volver", discounts_path, :class => "btn btn-warning" %>
         </div>
       </div>
 

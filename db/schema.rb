@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171026195711) do
+ActiveRecord::Schema.define(version: 20171107214349) do
 
   create_table "discounts", force: :cascade do |t|
     t.string   "title"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20171026195711) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.integer  "final_price"
   end
 
   create_table "jokes", force: :cascade do |t|
