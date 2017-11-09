@@ -1,27 +1,27 @@
-<!-- Page Content -->
-    <h1>Descuentos</h1>
-    
-    <div class="container">
-
-      <!-- Page Heading -->
-      <% @discounts.each do |discount| %>
-      <hr />
-      <!-- Project One -->
-      <div class="row">
-        <div class="col-md-7">
-          <a href="#">
-            <%= image_tag(discount.avatar.url, class: "img-responsive") if discount.avatar? %>
-          </a>
-        </div>
-        <div class="col-md-5">
-          <h3><%= discount.title %></h3>
-          <h2>$<%= discount.price %>.-</h2>
-          <%= link_to "Aplicar descuento", discount, :class => "btn btn-warning" %>
+<h1>La pica de la Rut</h1>
+<h3>+56975307388</h3>
+              <ul>
+                <li>Tenemos Whatsapp</li>
+              </ul>
+              <ul>
+                <li>Puedes Llamarnos</li>
+              </ul>
+            
+  <hr />
+  <div class="row">
+    <% @discounts.each do |disscount| %>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <%= image_tag disscount.avatar %>
+          <div class="caption">
+            <h3><%= disscount.title %></h3>
+            <strike>$<%= disscount.price %></strike>
+            <h3>$<%= disscount.final_price %></h3>
+            <p>
+              <%= link_to "Ver", disscount, :class => "btn btn-warning" %>
+            </p>
+          </div>
         </div>
       </div>
-      
-      <% end %>
-      <!-- /.row -->
-
-      <hr>
-    </div>
+    <% end %>
+  </div>
