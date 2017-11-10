@@ -7,7 +7,7 @@ class DiscountsController < ApplicationController
     @q = Discount.ransack(params[:q])
     @discounts = @q.result(distinct: true)
   end
-
+  
   # GET /discounts/1
   # GET /discounts/1.json
   def show
@@ -17,13 +17,17 @@ class DiscountsController < ApplicationController
   def new
     @discount = Discount.new
   end
-
+  
   # GET /discounts/1/edit
+  
   def edit
   end
 
   # POST /discounts
   # POST /discounts.json
+  
+  before_filter :authorize_admin, only: [:create, :edit, :destroy, :new]
+  
   def create
     @discount = Discount.new(discount_params)
 
@@ -37,6 +41,10 @@ class DiscountsController < ApplicationController
       end
     end
   end
+  
+
+  # This should probably be abstracted to ApplicationController
+  # as shown by diego.greyrobot
 
   # PATCH/PUT /discounts/1
   # PATCH/PUT /discounts/1.json
@@ -71,5 +79,9 @@ class DiscountsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def discount_params
       params.require(:discount).permit(:title, :price, :detail, :discount_image, :final_price)
+    end
+    
+    def authorize_admin
+      redirect_to root_path, alert: 'Access Denied' unless current_user.try(:admin?)
     end
 end

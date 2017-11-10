@@ -40,4 +40,8 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   
   Paperclip.options[:command_path] = "/usr/bin/convert"
+  
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  
+  config.action_mailer.perform_deliveries = false
 end
