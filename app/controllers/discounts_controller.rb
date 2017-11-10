@@ -1,6 +1,7 @@
 class DiscountsController < ApplicationController
   before_action :set_discount, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authorize_admin, only: [:create, :edit, :destroy, :new]
+  
   # GET /discounts
   # GET /discounts.json
   def index
@@ -25,8 +26,6 @@ class DiscountsController < ApplicationController
 
   # POST /discounts
   # POST /discounts.json
-  
-  before_filter :authorize_admin, only: [:create, :edit, :destroy, :new]
   
   def create
     @discount = Discount.new(discount_params)
@@ -82,6 +81,8 @@ class DiscountsController < ApplicationController
     end
     
     def authorize_admin
-      redirect_to root_path if current_user.admin == false
+      if not signed_in?
+        redirect_to root_path
+      end  
     end
 end
