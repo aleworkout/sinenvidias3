@@ -82,6 +82,6 @@ class DiscountsController < ApplicationController
     end
     
     def authorize_admin
-      redirect_to root_path, alert: 'Access Denied' unless current_user.try(:admin?)
+      redirect_to root_path if current_user.admin == false
     end
 end
