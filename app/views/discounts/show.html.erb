@@ -7,7 +7,7 @@
       <div class="row">
         <div class="col-md-7">
           <a href="#">
-            <%= image_tag(@discount.avatar.url, class: "img-responsive") if @discount.avatar? %>
+            <%= image_tag attachment_url(@discount, :discount_image, :fill, 300, 300, format: "jpg") %>
           </a>
         </div>
         <div class="col-md-5">
