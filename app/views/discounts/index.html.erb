@@ -20,7 +20,7 @@
                 <li>Puedes Llamarnos</li>
               </ul>
 -->
-  <% if current_user.try(:admin?) %>
+  <% if signed_in? %>
   <hr />    
   <%= link_to "Nuevo descuento", new_discount_path, role: 'button', class: 'btn btn-success btn-xs' %>     
   <% end %>
