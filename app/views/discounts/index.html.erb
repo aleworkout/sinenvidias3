@@ -1,12 +1,27 @@
-<h1>La pica de la Rut</h1>
-<h3>+56975307388</h3>
+<br />
+<div>
+    <%= search_form_for @q do |f| %>
+  
+    <%= f.label "Producto" %>
+    <%= f.search_field :title_cont %>
+  
+    <%= f.submit "Buscar" %>
+  
+    <% end %>
+</div>
+<h1>Botilleria Sin Envidia</h1>
+<p>Salvador Gutiérrez 5801, Quinta Normal, Santiago, Región Metropolitana</p>
+<h3>(2) 2786 2700</h3>
+<!--
               <ul>
                 <li>Tenemos Whatsapp</li>
               </ul>
               <ul>
                 <li>Puedes Llamarnos</li>
               </ul>
-            
+-->
+  <hr />    
+  <%= link_to "Nuevo descuento", new_discount_path, role: 'button', class: 'btn btn-success btn-xs' %>         
   <hr />
   <div class="row">
     <% @discounts.each do |disscount| %>
@@ -19,6 +34,7 @@
             <h3>$<%= disscount.final_price %></h3>
             <p>
               <%= link_to "Ver", disscount, :class => "btn btn-warning" %>
+              <%= link_to "Editar", edit_discount_path(disscount), :class => "btn btn-warning" %>
             </p>
           </div>
         </div>

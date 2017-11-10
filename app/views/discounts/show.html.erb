@@ -14,11 +14,7 @@
           <h3><%= @discount.title %></h3>
           <strike>$<%= @discount.price %>.-</strike>
           <h2>$<%= @discount.final_price %>.-</h2>
-          <ul>
-            <li>Carne</li>
-            <li>Pollo</li>
-            <li>Huevo</li>
-          </ul>
+          <p><%= @discount.detail %></p>
           <%= link_to "Volver", discounts_path, :class => "btn btn-warning" %>
         </div>
       </div>

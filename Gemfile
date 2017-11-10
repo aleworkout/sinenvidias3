@@ -5,6 +5,7 @@ gem 'paperclip', '~> 5.1'
 gem "refile", require: "refile/rails"
 gem "refile-mini_magick"
 gem "refile-s3"
+gem 'ransack'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
