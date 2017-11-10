@@ -49,7 +49,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to "Nuevo descuento", new_discount_path %></li>
+        <% if signed_in? %>
+          <li><%= link_to "Nuevo descuento", new_discount_path %></li>
+        <% end %>
         <li><%= link_to "Descuentos", discounts_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

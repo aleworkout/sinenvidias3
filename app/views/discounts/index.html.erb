@@ -36,7 +36,7 @@
             <h3>$<%= disscount.final_price %></h3>
             <p>
               <%= link_to "Ver", disscount, :class => "btn btn-warning" %>
-              <% if current_user.try(:admin?) %>
+              <% if signed_in? %>
                 <%= link_to "Editar", edit_discount_path(disscount), :class => "btn btn-warning" %>
               <% end %>
             </p>
